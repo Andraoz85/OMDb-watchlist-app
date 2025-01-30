@@ -87,8 +87,30 @@ button {
     border-radius: 5px;
     max-width: 200px;
 
+    label {
+        padding: 0.5rem 1rem;
+        border: none;
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        cursor: pointer;
+        font-size: 1rem;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: #507950;
+        }
+
+        input {
+            padding-left: 3rem;
+        }
+    }
+
     button {
         margin-top: 1rem;
+
+        &:hover {
+            background-color: #507950;
+        }
     }
 }
 

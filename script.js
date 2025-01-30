@@ -98,7 +98,9 @@ async function addToWatchlist(imdbID) {
         plot: movie.Plot,
         poster:
           movie.Poster !== "N/A" ? movie.Poster : "./assets/default-img.png",
+        watched: false,
       });
+
       localStorage.setItem("watchlist", JSON.stringify(watchlist));
       alert(`${movie.Title} was added to the watchlist!`);
     } else {
@@ -123,13 +125,37 @@ function displayWatchlist() {
     let movieElement = document.createElement("div");
     movieElement.classList.add("movie-card");
     movieElement.innerHTML = `
-            <img src="${movie.poster}" alt="${movie.title}" onerror="this.src='./assets/default-img.png'">
+            <img src="${movie.poster}" alt="${
+      movie.title
+    }" onerror="this.src='./assets/default-img.png'">
             <h3>${movie.title} (${movie.year})</h3>
             <p>${movie.plot}</p>
-            <button onclick="removeFromWatchlist('${movie.imdbID}')">Remove</button>
+            <label>
+                <input type="checkbox" ${
+                  movie.watched ? "checked" : ""
+                } onchange="toggleWatched('${movie.imdbID}')">Watched
+            </label>
+            <button onclick="removeFromWatchlist('${
+              movie.imdbID
+            }')">Remove</button>
             `;
     watchlistContainer.appendChild(movieElement);
   });
+}
+
+function toggleWatched(imdbID) {
+  console.log(`Toggle watched status for ${imdbID}`);
+
+  let watchlist = getWatchlist();
+  let movieIndex = watchlist.findIndex((movie) => movie.imdbID === imdbID);
+
+  if (movieIndex !== -1) {
+    watchlist[movieIndex].watched = !watchlist[movieIndex].watched;
+    localStorage.setItem("watchlist", JSON.stringify(watchlist));
+    console.log("Watched status updated", watchlist[movieIndex]);
+
+    displayWatchlist();
+  }
 }
 
 function removeFromWatchlist(imdbID) {
