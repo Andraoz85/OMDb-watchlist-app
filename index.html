@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OMDb</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>OMDb API</h1>
+    </header>
+    <nav>
+      <button onclick="showSearch()">Search Movies</button>
+      <button onclick="showWatchlist()">My Watchlist</button>
+    </nav>
+
+    <main>
+      <section id="search-section">
+        <h2>Search Movie</h2>
+        <input
+          type="text"
+          id="movie-search-box"
+          placeholder="Search for a movie..."
+          required
+        />
+        <button onclick="findMovies()">Search</button>
+        <div id="search-results"></div>
+      </section>
+
+      <section id="watchlist-section" style="display: none">
+        <h2>My Watchlist</h2>
+        <div id="watchlist"></div>
+      </section>
+    </main>
+  </body>
+</html>

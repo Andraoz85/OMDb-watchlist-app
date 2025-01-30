@@ -1,0 +1,98 @@
+:root {
+    --primary-color: #d4aa11;
+    --background-color: #171717;
+    --text-color: #ffffff;
+    --accent-color: #292929;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    text-align: center;
+}
+
+header {
+    padding: 1rem;
+    background-color: var(--accent-color);
+}
+
+nav {
+    margin: 1rem 0;
+}
+
+nav button {
+    padding: 0.75rem 1.5rem;
+    margin: 0 0.5rem;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+main {
+    padding: 1rem;
+}
+
+#search-section,
+#watchlist-section {
+    max-width: 800px;
+    margin: auto;
+    background-color: var(--accent-color);
+    padding: 1.5rem;
+    border-radius: 5px;
+}
+
+input[type="text"] {
+    width: 80%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+#search-results,
+#watchlist {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.movie-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--background-color);
+    padding: 1rem;
+    border-radius: 5px;
+    max-width: 200px;
+
+    button {
+        margin-top: 1rem;
+    }
+}
+
+.movie-card img {
+    width: 150px;
+    height: 200px;
+}
