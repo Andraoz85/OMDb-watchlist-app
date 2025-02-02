@@ -74,7 +74,7 @@ function displayMovies(movies) {
     movieElement.innerHTML = `
             <img src="${movie.poster}" alt="${movie.title}" onerror="this.src='./assets/default-img.png'">
             <h3>${movie.title} (${movie.year})</h3>
-            <button onclick="addToWatchlist('${movie.imdbID}')">Add to Watchlist</button>
+            <button onclick="addToWatchlist('${movie.imdbID}')" id=addToWatchlistBtn>Add to Watchlist</button>
         `;
     resultsContainer.appendChild(movieElement);
   });
