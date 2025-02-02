@@ -12,8 +12,8 @@
       <h1>OMDb API</h1>
     </header>
     <nav>
-      <button onclick="showSearch()">Search Movies</button>
-      <button onclick="showWatchlist()">My Watchlist</button>
+      <button id="searchNavBtn">Search Movies</button>
+      <button id="watchlistNavBtn">My Watchlist</button>
     </nav>
 
     <main>
@@ -25,10 +25,9 @@
           placeholder="Search for a movie..."
           required
         />
-        <button onclick="findMovies()">Search</button>
+        <button id="findMoviesBtn">Search</button>
         <div id="search-results"></div>
       </section>
-
       <section id="watchlist-section" style="display: none">
         <h2>My Watchlist</h2>
         <div id="watchlist"></div>
